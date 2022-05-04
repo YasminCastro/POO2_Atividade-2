@@ -67,15 +67,21 @@ public class AlunoJDBC {
 	
 	public void apagar(int id, Connection con) throws IOException, SQLException {
 		
-		sql = "DELETE FROM aluno WHERE id=" + id;
-		Statement st = con.createStatement();	
-		ResultSet rs = st.executeQuery(sql);
+		sql = "DELETE FROM aluno WHERE id = ?";
+		pst = con.prepareStatement(sql);
+		pst.setInt(1, id);
 		
-
-		rs.close();
-		st.close();
 		
-		System.out.println("Aluno removido com sucesso!");
+		
+		
+		if(pst.executeUpdate() >= 1) {
+			System.out.println("Aluno removido com sucesso!");
+		}
+		else {
+			System.out.println("Não foi encontrado aluno com id "+ id);
+		}
+		
+		
 		
 	}
 	
