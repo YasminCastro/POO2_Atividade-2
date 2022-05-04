@@ -98,13 +98,11 @@ public class Programa {
 					AlunoJDBC acao = new AlunoJDBC();
 					
 					System.out.print("Digite o id que deseja excluir: ");
-					int id = Integer.parseInt(console.nextLine());
-				
+					int id = Integer.parseInt(console.nextLine());		
 					
 					acao.apagar(id, con);
 					
-					
-				
+							
 				}
 				
 			} while (opcao != 5);
