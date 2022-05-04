@@ -61,18 +61,16 @@ public class Programa {
 					
 				}else if(opcao == 2) {
 					
-					
-					List<Aluno> lista = new ArrayList<>();
 					AlunoJDBC acao = new AlunoJDBC();
 					
-					lista = acao.listar(con);
 					
-					Iterator<Aluno> li = lista.iterator();
-					
-					while(li.hasNext()) {
-						System.out.println(li.next().toString());
-					}
-					
+				System.out.println("LISTAR ALUNOS");
+				List<Aluno> lista = acao.listar(con);
+				
+				
+				for(Aluno a : lista) {
+					System.out.println("Aluno: " +  a.getId() + " " + a.getNome() + " " + a.getSexo() + " " + a.getDt_nasc());
+				}
 					
 					
 				}else if(opcao == 3) {

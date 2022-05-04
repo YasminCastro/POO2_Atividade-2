@@ -11,11 +11,7 @@ public class Aluno {
 	
 	public Aluno() {};
 	
-	@Override
-	public String toString() {
-		return "id=" + id + ", nome=" + nome + ", sexo=" + sexo + ", dt_nasc=" + dt_nasc ;
-	}
-
+	
 	public Aluno(int id, String nome, String sexo, Date dt_nasc) {
 		
 		this.id = id;
